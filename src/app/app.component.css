@@ -1,0 +1,41 @@
+.container {
+  margin-top: 30px;
+}
+.alert-danger {
+  background-color: red;
+  color: yellow;
+  padding: 5px 30px;
+  border: red 1px solid;
+  margin-top:20px;
+  font-weight: 700;
+  
+}
+
+input.ng-invalid.ng-touched {
+  border: red 2px solid;
+}
+
+.button {
+  width:100px;
+  background-color: blue;
+  color: white;
+  border-radius: .5pc;
+  border: blue 1px solid;
+  margin-bottom: 10px;
+}
+.list-group {
+  margin: 2px;
+  list-style-type: none;
+}
+
+.list-item {
+  text-decoration: none;
+  border: 2px solid rgb(189, 189, 237);
+  padding: 15px;
+  text-transform: capitalize;
+  font-weight: 600;
+  box-shadow: rgb(199, 199, 243) 8px 7px 8px  ;
+}
+
+
+  
