@@ -1,1 +1,58 @@
 /* You can add global styles to this file, and also import other style files */
+.primary_btn {
+    background-color: rgba(0, 0, 255, 0.871);
+    padding: 4px 8px;
+    color: whitesmoke;
+    font-size: 12px;
+    font-weight: 700;
+    border-radius: 8px;
+    box-shadow: rgba(0, 0, 255, 0.871) 3px 3px 5px;
+}
+
+.primary_btn:hover {
+    background-color: brown;
+    box-shadow: brown 3px 3px 5px;
+}
+
+.dark_btn {
+    background-color:  black;
+    padding: 4px 8px;
+    color: whitesmoke;
+    font-size: 12px;
+    font-weight: 700;
+    border-radius: 8px;
+    box-shadow: black 2px 2px 5px;
+}
+
+.center_button_dev {
+    display: flex;
+    justify-content: space-around;
+}
+
+.form_control {
+    padding: 2px;
+    font-size: 12px;
+    border: lightblue 1px solid;
+    border-radius: 2px;
+}
+
+.form-group {
+    padding: 2px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.nav-group {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+}
+
+.nav-list-items {
+    text-decoration: none;
+    justify-content: space-around;
+}
