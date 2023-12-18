@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
+
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { rejects } from 'assert';
 import { resolve } from 'dns';
 import { promise } from 'protractor';
@@ -12,90 +13,33 @@ import { Observable } from 'rxjs/Observable';
 })
 export class SignUpComponent implements OnInit {
 
-  genders = ['male', 'female'];
-  exampleForm: FormGroup;
-  forbidenUser = ['jack', 'rose', 'test'];
-  HobiesAdd = [];
+  gwnderSekect = true;
+ 
 
-  constructor() { }
+  constructor(
+    private fb: FormBuilder,
+  ) { }
 
   ngOnInit(): void {
-    this.exampleForm = new FormGroup ({
-      'userData': new FormGroup ({
-        'userName': new FormControl('', [Validators.required, this.forbiddenName.bind(this)], this.unauthorizedEmail ),
-        'email': new FormControl('', [Validators.required, Validators.email]),
-      }),
-      'gender': new FormControl('male'),
-      'Hobies': new FormArray([])
-    });
-    this.exampleForm.statusChanges.subscribe(
-      (status) => console.log(status)
-    );
-   
-    this.exampleForm.patchValue({
-      'userData': {
-        'userName': 'sureshAntony',
-      },
-      'gender': 'male'
-    });
+ 
   }
 
-  
-  onsetValue(){
-    this.exampleForm.setValue({
-      'userData': {
-        'userName': 'AngularTest',
-        'email': 'suresh@greatDaddy.com'
-      },
-      'gender': 'male',
-      'Hobies': []
-    });
 
-    this.HobiesAdd = ['cycling','Gymin','Cooking'];
-    
+  SignupForm = this.fb.group({
+    id: this.fb.control('', Validators.compose([Validators.required, Validators.minLength(5)])),
+    email: this.fb.control('', Validators.compose([Validators.required, Validators.email])),
+    password: this.fb.control('', Validators.compose([
+      Validators.required, 
+      Validators.pattern('(?=.*[a-z]) (?=.*[A-Z]) (?=.*[0-9]) (?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&].{8,}')
+    ])),
+    userName: this.fb.control('', Validators.required),
+    gender: this.fb.control('male')
+  })
+
+
+
+
+  registerUser() {
+    console.log(this.SignupForm.value)
   }
-
-  submitedForm() {
-    console.log(this.exampleForm.value);
-   // this.exampleForm.reset();
-  }
-
- /*
-  addingHobie() {
-     
-    const Control = new FormControl('', Validators.required);
-   (<FormArray>this.exampleForm.get('Hobies')).push(Control); 
-   
-  }
-
-  get Controls() {
-    return(this.exampleForm.get('Hobies') as FormArray).controls;
-  }
-
-  getControls() {
-    const Control = new FormControl('', Validators.required);
-    (<FormArray>this.exampleForm.get('Hobies')).push(Control); 
-     return (<FormArray>this.exampleForm.get('hobbies')).controls;
-  }  */
-
-  forbiddenName(control: FormControl): {[s: string]: boolean}  {
-    if (this.forbidenUser.indexOf(control.value) !== -1) {
-      return{'user is forbidden': true};
-    }
-    return null;
-  }
-
-  unauthorizedEmail(control: FormControl): Promise<any> | Observable<any> {
-    const promise =  new Promise<any>((resolve, reject) => {
-      setTimeout(() => {
-        if(control.value ===  'AngularTest') {
-          resolve({'user is forbidden': true});
-        } else {
-          resolve(null);
-        }
-      }, 3000);
-    });
-    return promise;
-  }
-
 }
