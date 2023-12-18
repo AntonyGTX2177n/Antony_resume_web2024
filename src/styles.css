@@ -15,7 +15,7 @@
 }
 
 .dark_btn {
-    background-color:  black;
+    background-color: black;
     padding: 4px 8px;
     color: whitesmoke;
     font-size: 12px;
@@ -36,10 +36,9 @@
     border-radius: 2px;
 }
 
-.form-group {
+.form_group {
     padding: 2px;
-    display: flex;
-    justify-content: space-around;
+    margin: 10px 0;
 }
 
 .text-center {
@@ -54,5 +53,26 @@
 
 .nav-list-items {
     text-decoration: none;
+    justify-content: space-around;
+}
+
+.formDesign {
+    background: url('./app/assets/images/Bright-spiral.jpg');
+    background-blend-mode: overlay;
+    padding: 30px;
+    margin: 10px 0;
+    object-fit: contain;
+    border-top-left-radius: 35px;
+    border-bottom-right-radius: 35px;
+    border-color: skyblue 5px solid;
+    box-shadow: rgb(167, 167, 167) 12px 12px 12px;
+}
+
+.formDesign:hover {
+    background-color: rgba(135, 207, 235, 0.791);
+}
+
+.center_form {
+    display: flex;
     justify-content: space-around;
 }

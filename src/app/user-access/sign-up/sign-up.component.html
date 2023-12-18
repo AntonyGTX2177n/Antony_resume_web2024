@@ -1,64 +1,46 @@
-<div class="container">
-    <div class="row">
-      <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
-        <form [formGroup]="exampleForm" (ngSubmit)="submitedForm()">
-          <div formGroupName="userData">
-            <div class="form-group">
-              <label for="username">Username</label>
-              <input
-                type="text"
-                id="username"
-                class="form-control"
-                formControlName="userName"
-                >
-                <span
-                 *ngIf="!exampleForm.get('userData.userName').valid && exampleForm.get('userData.userName').touched"
-                 class="alert-danger" >
-                   <span *ngIf="exampleForm.get('userData.userName').errors['required']">This field is required!</span>
-                   <span *ngIf="exampleForm.get('userData.userName').errors['user is forbidden']">This name is Not allowed</span>
-                </span>
-                
-            </div>
-            <div class="form-group">
-              <label for="email">email</label>
-              <input
-                type="text"
-                id="email"
-                class="form-control"
-                formControlName="email"
-                >
-               <span
-               class="alert-danger"
-               *ngIf="!exampleForm.get('userData.email').valid && exampleForm.get('userData.email').touched"
-               >
-                Provide a valid email address
-               </span>
-            </div>
-          </div>                                                                              
-          <div class="radio" *ngFor="let gender of genders">
-            <label>
-              <input
-                type="radio"
-                formControlName="gender"
-                [value]="gender">{{ gender }}
-            </label>
+<div id="user_access__div">
+  <form [formGroup]="SignupForm" (ngSubmit)="registerUser()">
+    <div class="form_container">
+      <h1 class="text-center">Welcome to sign-up</h1>
+      <div class="center_form">
+        <div class="formDesign">
+          <div class="form_group">
+            <label for="id">User ID</label>
+            <input type="text" class="form-control" formControlName="id">
           </div>
-          <div formArrayName="Hobies">
-            <h4>Add a Hobie you like</h4>
-            <button 
-              class="button"
-              type="button"
-              (click)=" onsetValue()"
-              >Add Hobie</button>
-            <div class="form-group" *ngFor="let hobbyControl of HobiesAdd">
-              <ul class="list-group">
-                <li class="list-item" value="hobies">{{hobbyControl}}</li>
-              </ul>
+          <div class="form_group">
+            <label for="email">Enter your mail Addess</label>
+            <input type="email" class="form-control" formControlName="email">
+          </div>
+          <div class="form_group">
+            <label for="password">Choose a password</label>
+            <input type="password" class="form-control" formControlName="password">
+          </div>
+          <div class="form_group">
+            <label for="userName">Pick a userName</label>
+            <input type="text" class="form-control" formControlName="userName">
+          </div>
+          <div class="form_group">
+            <label for="gender">Select a Gender</label>
+            <div class="genderDesign">
+              <div class="male">
+                <input type="radio" formControlName="gender" id="male" name="gender" value="male">
+                <label for="male">male</label>
+              </div>
+              <div class="female">
+                <input type="radio" formControlName="gender" id="female" name="gender" value="female">
+                <label for="female">Female</label> 
+              </div>
             </div>
           </div>
-          <button class="button" type="submit">Submit</button>
-        </form>
+        </div>
+      </div>
+      <p class="hintText">Hint: click the button on the reight to submit the form</p>
+    </div>
+    <div class="side_bar_container">
+      <div class="center_button_dev">
+        <button type="submit" class="userAccess_btn">Submit-form</button>
       </div>
     </div>
-  </div>
-  
+  </form>
+</div>
