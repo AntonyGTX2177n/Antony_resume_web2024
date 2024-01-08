@@ -1,0 +1,33 @@
+<div id="user_access__div">
+    <form [formGroup]="loginForm" (ngSubmit)="loginUser()">
+        <div class="form_container">
+            <h1 class="text-center">You reached login</h1>
+            <div class="center_form">
+                <div class="formDesign">
+                    <div class="form_group">
+                        <label for="email">Registered Email Address</label>
+                        <input type="email" class="form_control" formControlName="email">
+                    </div>
+                    <div class="form_group">
+                        <label for="password">Registered password</label>
+                        <input type="password" class="form_control" formControlName="password">
+                    </div>
+                     <div class="center_button_dev_smallScreen">
+                        <button type="submit" class="userAccess_btn">Submit-form</button>
+                     </div>
+                </div>
+            </div>
+            <p class="hintText">Hint: click the button on the reight to submit the form<br>
+                If your new please register by clicking the<br> button bellow
+            </p>
+            <div class="center_button_dev">
+                <button type="button" class="dark_btn" routerLink="/signUp">sign-up</button>
+            </div>
+        </div>
+        <div class="side_bar_container">
+            <div class="center_button_dev">
+                <button type="submit" class="userAccess_btn">Submit-form</button>
+            </div>
+        </div>
+    </form>
+</div>

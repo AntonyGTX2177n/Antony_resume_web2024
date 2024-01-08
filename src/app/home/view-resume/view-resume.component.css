@@ -1,0 +1,274 @@
+.view_resume_container{
+    position: absolute;
+    left: 0;
+    top: 17%;
+    width: 80%;
+    height: 1300px;
+    padding: 20px;
+}
+
+.main_resume_div {
+    width: 100%;
+    height: 100%;
+}
+
+.welcomeTest {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding: 10px;
+}
+
+.welcomeTest h1 {
+    margin: 0;
+}
+.welcomeTest p {
+    margin-top: 5px;
+}
+
+@keyframes dtripesBG {
+    0% {
+        background-color: whitesmoke;
+        color: back;
+    }
+
+    25% {
+        background: url('../../assets/images/white-strips-bg-2.jpeg');
+        background-size: cover;
+        object-fit: contain;
+        color: darkblue;
+    }
+
+    50% {
+        background-color: whitesmoke;
+        color: back;
+    }
+
+    75% {
+        background: url('../../assets/images/white-strips-bg-2.jpeg');
+        background-size: cover;
+        object-fit: contain;
+        color: darkblue;
+    }
+
+    100% {
+        background-color: whitesmoke;
+        color: back;
+    }
+}
+
+.main_bar {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    height: 75%;
+    border: skyblue 3px solid;
+    border-top-right-radius: 25px;
+    box-shadow: skyblue 12px 12px 12px;
+}
+
+.side_bar {
+    display: flex;
+    justify-content: space-around;
+    width: 35%;
+    padding: 15px;
+    background-color: navajowhite;
+    box-shadow:  navajowhite 12px 15px 17px;
+}
+
+.main_content {
+    width: 65%;
+    padding: 10px;
+}
+
+.profile_picture {
+    background: url('../../assets/images/profile.jpeg');
+    width: 150px;
+    height: 150px;
+    border-radius: 150px;
+    background-size: cover;
+    object-fit: contain;
+    box-shadow: brown 7px 7px 12px;
+    margin: 10px 0;
+}
+
+.seperation_line {
+    background: url('../../assets/images/gold-bg.jpg');
+    height: 5px;
+    background-size: cover;
+    border-radius: 20px;
+    box-shadow: grey 3px 2px 5px;
+    margin: 15px 0;
+}
+
+
+.third {
+    margin-left: 5px;
+}
+
+.Address {
+    text-transform: capitalize;
+}
+
+.action_button_dev {
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    padding: 5px 15px;
+    box-shadow: skyblue 3px 2px 4px 4px;
+    background-color: rgba(163, 135, 135, 0.248);
+}
+
+.main_div_content {
+    padding: 15px;
+}
+
+.main_div_content h3 {
+    font-weight: 800;
+}
+
+.main_div_seperation {
+    height: 10px;
+    background-color: antiquewhite;
+    margin: 17px 0;
+    border-radius: 30px;
+}
+
+.editPageDesign {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+    height: 2000px;
+    background-color: rgba(255, 0, 0, 0.687);
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+}
+.editFormContainer {
+    margin-top: 12%;
+    width: 800px;
+    height: 1600px;
+    background-color: skyblue;
+    padding: 15px;
+    border-top-right-radius: 35px;
+    border-top-left-radius: 10px;
+    border: grey 5px solid;
+    box-shadow: grey 5px 5px 8px 8px;
+}
+
+.deleteDialog {
+    position: fixed;
+    top: 30%;
+    background-color: yellow;
+    color: red;
+    text-align: center;
+    width: 600px;
+    height: 200px;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: red 12px 12px 12px;
+}
+
+.ButtonDiv{
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 10px;
+}
+
+.deletePageDesign {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+    height: 2000px;
+    background-color: rgba(255, 0, 0, 0.687);
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+}
+
+.cancel_btn {
+    background-color: yello(0, 0, 255, 0.871);
+    padding: 4px 8px;
+    margin: 10px 0;
+    color: black;
+    font-size: 12px;
+    font-weight: 700;
+    border-radius: 8px;
+    box-shadow: rgba(17, 17, 21, 0.871) 3px 3px 5px;
+}
+
+.cancel_btn:hover {
+    background-color: brown;
+    box-shadow: brown 3px 3px 5px;
+    color: white;
+}
+
+.confirm_btn {
+    background-color: red;
+    padding: 4px 8px;
+    margin: 10px 0;
+    color: yellow;
+    font-size: 12px;
+    font-weight: 700;
+    border-radius: 8px;
+    box-shadow: rgba(17, 17, 21, 0.871) 3px 3px 5px;
+}
+
+.confirm_btn:hover {
+    background-color: yellow;
+    box-shadow: yellow 3px 3px 5px;
+    color: red;
+}
+
+@media (min-dth: 200px), (max-width: 700px) {
+    .view_resume_container{
+        position: absolute;
+        left: 0;
+        top: 17%;
+        width: 100%;
+        height: 1300px;
+        padding: 10px;
+    }
+
+    .main_bar {
+        display: block;
+    }
+
+    .side_bar {
+        width: 100%;
+        padding: 5px;
+        background-color: navajowhite;
+        box-shadow:  navajowhite 12px 15px 17px;
+    }
+    
+    .main_content {
+        width: 100%;
+        padding: 5px;
+    }
+    .action_button_dev {
+        margin-top: 900px;
+    }
+
+    .editFormContainer {
+        height: 2450px;
+    }
+
+    .editPageDesign {
+        height: 3550px;
+    }
+
+    .deleteDialog {
+        width: 300px;
+        font-size: 9px;
+    }
+
+    .deleteDialog h3 {
+        font-size: 18px;
+    }
+}
+

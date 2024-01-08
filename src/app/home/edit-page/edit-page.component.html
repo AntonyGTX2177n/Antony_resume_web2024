@@ -1,0 +1,289 @@
+<form [formGroup]="profileCreationForm"  (ngSubmit)="editeResume()">
+    <div class="cretw_cv_div">
+        <hr>
+        <header>
+            <h2>Personal Details</h2>
+        </header>
+        <hr>
+        <div class="centered_div">
+            <div class="input_group">
+                <input 
+                    type="file" 
+                    class="hide_Input" 
+                    #profilePicture
+                    (change)="onImagePicked($event)"
+                />
+                <div class="profile_pic" (click)="profilePicture.click()" *ngIf="!imagePreview">
+                    <p>profile pic</p>
+                </div>
+                <div 
+                    class="profile_picPreview"
+                    *ngIf="imagePreview !== '' && imagePreview && profileCreationForm.get('profileImage').valid"
+                    (click)="profilePicture.click()"
+                    >
+                    <img [src]="imagePreview" [alt]="profileCreationForm.value.firstName">
+                </div>
+            </div>
+            <div class="input_group">
+                <label for="firstName">First-name*</label>
+                <input 
+                    type="text" 
+                    placeholder="first-Name" 
+                    class="form_control"
+                    formControlName="firstName"
+                />
+            </div>
+            <div class="input_group">
+                <label for="lastName">Last-name*</label>
+                <input 
+                    type="text" 
+                    placeholder="Last-Name" 
+                    class="form_control"
+                    formControlName="lastName"
+                />
+            </div>
+        </div>
+        <br>
+        <hr>
+        <header>
+            <h2>Contact Details</h2>
+        </header>
+        <hr>
+        <div class="centered_div">
+            <div class="input_group">
+                <label for="email">Email*</label>
+                <input 
+                    type="email" 
+                    placeholder="Email" 
+                    class="form_control"
+                    formControlName="email"
+                />
+            </div>
+            <div class="input_group">
+                <label for="mobileNumbere">Mobile-Number*</label>
+                <input 
+                    type="tel" 
+                    placeholder="Mobile" 
+                    class="form_control"
+                    formControlName="mobile"
+                />
+            </div>
+            <div class="input_group">
+                <label for="whatsappNumber">Whatsapp-number*</label>
+                <input 
+                    type="tel" 
+                    placeholder="Whatsapp" 
+                    class="form_control"
+                    formControlName="whatsApp"
+                />
+            </div>
+        </div>
+        <header>
+            <h2>Recidential Address</h2>
+        </header>
+        <hr>
+        <div class="centered_div">
+            <div class="input_group">
+                <label for="lineOne">Line-One*</label>
+                <input 
+                    type="text" 
+                    placeholder="lineOne" 
+                    class="form_control"
+                    formControlName="lineOne"
+                />
+            </div>
+            <div class="input_group">
+                <label for="lineTwo">Line-Two*</label>
+                <input 
+                    type="text" 
+                    placeholder="lineTwo" 
+                    class="form_control"
+                    formControlName="lineTwo"
+                />
+            </div>
+            <div class="input_group">
+                <label for="streetName">Street-Name*</label>
+                <input 
+                    type="text" 
+                    placeholder="streetName" 
+                    class="form_control"
+                    formControlName="streetName"
+                />
+            </div>
+        </div>
+        <hr>
+        <div class="centered_div">
+            <div class="input_group">
+                <label for="state">State*</label>
+                <input 
+                    type="text" 
+                    placeholder="state" 
+                    class="form_control"
+                    formControlName="state"
+                />
+            </div>
+            <div class="input_group">
+                <label for="country">Country*</label>
+                <input 
+                    type="text" 
+                    placeholder="country" 
+                    class="form_control"
+                    formControlName="country"
+                />
+            </div>
+            <div class="input_group">
+                <label for="zipCode">zipCode*</label>
+                <input 
+                    type="number" 
+                    placeholder="zipCode" 
+                    class="form_control"
+                    formControlName="zipCode"
+                />
+            </div>
+        </div>
+        <header>
+            <h2>Education Details</h2>
+        </header>
+        <hr>
+        <div class="centered_div">
+            <div class="input_group">
+                <label for="collegeName">College-Name*</label>
+                <input 
+                    type="text" 
+                    placeholder="collegeName" 
+                    class="form_control"
+                    formControlName="collegeName"
+                />
+            </div>
+            <div class="input_group">
+                <label for="courseName">Course-Name*</label>
+                <input 
+                    type="text" 
+                    placeholder="courseName" 
+                    class="form_control"
+                    formControlName="courseName"
+                />
+            </div>
+            <div class="input_group">
+                <label for="graduationYear">Graduation-Year*</label>
+                <input 
+                    type="date" 
+                    placeholder="graduationYear" 
+                    class="form_control"
+                    formControlName="graduationYear"
+                />
+            </div>
+        </div>
+        <hr>
+        <div class="centered_div">
+            <div class="input_group">
+                <label for="certificationName">Certification-Name*</label>
+                <input 
+                    type="text" 
+                    placeholder="certificationName" 
+                    class="form_control"
+                    formControlName="certificationName"
+                />
+            </div>
+            <div class="input_group">
+                <label for="courseModules">Course-Modules*</label>
+                <input 
+                    type="text" 
+                    placeholder="courseModules" 
+                    class="form_control"
+                    formControlName="courseModules"
+                />
+            </div>
+            <div class="input_group">
+                <label for="certifedYear">Certifed-Year*</label>
+                <input 
+                    type="date" 
+                    placeholder="certifedYear" 
+                    class="form_control"
+                    formControlName="certifedYear"
+                />
+            </div>
+        </div>
+        <header>
+            <h2>Experience Details</h2>
+        </header>
+        <hr>
+        <div class="centered_div">
+            <div class="input_group">
+                <label for="companyName">Company-Name*</label>
+                <input 
+                    type="text" 
+                    placeholder="companyName" 
+                    class="form_control"
+                    formControlName="companyName"
+                />
+            </div>
+            <div class="input_group">
+                <label for="jobRole">Job-Role*</label>
+                <input 
+                    type="text" 
+                    placeholder="jobRole" 
+                    class="form_control"
+                    formControlName="jobRole"
+                />
+            </div>
+            <div class="input_group">
+                <label for="duration">Worked Duration in Company*</label>
+                <input 
+                    type="number" 
+                    placeholder="duration" 
+                    class="form_control"
+                    formControlName="duration"
+                />
+            </div>
+        </div>
+        <hr>
+        <div class="centered_div">
+            <div class="input_group">
+                <label for="dateOfJoining">Date-Of-Joining*</label>
+                <input 
+                    type="date" 
+                    placeholder="dateOfJoining" 
+                    class="form_control"
+                    formControlName="dateOfJoining"
+                />
+            </div>
+            <div class="input_group">
+                <label for="dateOfLeaving">Date-Of-Leaving*</label>
+                <input 
+                    type="date" 
+                    placeholder="dateOfLeaving" 
+                    class="form_control"
+                    formControlName="dateOfLeaving"
+                />
+            </div>
+            <div class="input_group">
+                <label for="noticePeriod">Notice-Period*</label>
+                <input 
+                    type="number" 
+                    placeholder="noticePeriod" 
+                    class="form_control"
+                    formControlName="noticePeriod"
+                />
+            </div>
+        </div>
+        <hr>
+        <header>
+            <h2>Declaration</h2>
+        </header>
+        <div class="input_group">
+            <label for="declaration">Declaration of truth*</label>
+            <textarea 
+                formControlName="declaration"
+                id="declaration" 
+                cols="30" 
+                rows="10"
+                class="form_control"
+                >
+            </textarea>
+        </div>
+        <div class="center_button_dev">
+            <button type="submit" class="primary_btn">Submit</button>
+        </div>
+    </div>
+</form>

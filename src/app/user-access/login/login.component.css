@@ -1,0 +1,171 @@
+#user_access__div {
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+  }
+  
+  form {
+    display: flex;
+  
+  }
+  
+  .form_container {
+    width: 80%;
+    height: 100%;
+  }
+  
+  .side_bar_container {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 25px;
+    background-color: brown;
+    width: 20%;
+    height: 100%;
+    animation: dynamicBackground infinite 6s ease-in-out;
+  }
+  
+  
+  @keyframes dynamicBackground {
+    0% {
+      background: url('../../assets/images/Bright-spiral.jpg');
+      background-size: cover;
+      object-fit: contain;
+      height: 100%;
+    }
+  
+    35% {
+      background: url('../../assets/images/spiral-desgin.jpg');
+      background-size: cover;
+      object-fit: contain;
+      color: black;
+      height: 100%;
+    }
+  
+    70% {
+      background: url('../../assets/images/Thread-design.jpg');
+      background-size: cover;
+      object-fit: contain;
+      color: green;
+      height: 100%;
+    }
+  
+    100% {
+      background: url('../../assets/images/Bright-spiral.jpg');
+      background-size: cover;
+      object-fit: contain;
+      height: 100%;
+    }
+  }
+  
+  .userAccess_btn {
+    margin-top: 75%;
+    width: 150px;
+    height: 150px;
+    border-radius: 150px;
+    background: url('../../assets/images/gold-ring.png');
+    background-size: cover;
+    object-fit: contain;
+    box-shadow: black 2px 3px 6px;
+    font-weight: 900;
+    animation: flashingBtn infinite 3s ease-in-out;
+  }
+  
+  .userAccess_btn:hover {
+    background: rgba(0, 0, 0, 0.33);
+    color: white;
+    font-size: 20px;
+    box-shadow: black 2px 3px 6px;
+  }
+  
+  
+  @keyframes flashingBtn {
+    0% {
+      transform: rotatey(0deg);
+    }
+  
+    50% {
+      transform: rotatey(180deg);
+    }
+  
+    1000% {
+      transform: rotatey(360deg);
+    }
+  }
+  
+  .genderDesign{
+    background-color: rgba(135, 207, 235, 0.63);
+    width: 300px;
+    padding: 5px;
+    display: flex;
+    justify-content: space-evenly;
+  }
+  
+  .male input {
+    margin-right: 10px;
+   
+  }
+  
+  .female input {
+    margin-right: 10px;
+  
+  }
+  
+  .hintText {
+    margin-top: 10%;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+  }
+  
+label {
+    text-shadow: white 12px 12px 12px;
+    font-weight: 500;
+}
+
+.center_button_dev_smallScreen {
+  display: flex;
+  justify-content: space-around;
+}
+  
+@media(min-width:200px){
+  .side_bar_container {
+    display: none;
+  }
+
+  .hintText {
+    display: none;
+  }
+
+  .form_container {
+    width: 100%;
+  }
+
+}
+
+@media(min-width:900px){
+  .side_bar_container {
+    display: flex;
+    width: 20%;
+    justify-content: space-around;
+  }
+
+  .form_container {
+    width: 80%;
+  }
+
+  .center_button_dev_smallScreen button {
+    display: none;
+  }
+
+  .hintText {
+    display: flex;
+  }
+
+  
+}
+

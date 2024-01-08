@@ -1,0 +1,46 @@
+nav {
+    margin: 0;
+    padding: 15px;
+    width: 100%;
+    left: 0;
+    top: 0;
+    background: url('../../assets/images/Bright-spiral.jpg');
+    background-size: cover;
+    object-fit: cover;
+    box-shadow: 3px 6px 12px rgba(0, 0, 255, 0.5);
+}
+
+.centered_div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.userAccess_btn {
+    width: 80px;
+    height: 80px;
+    border-radius: 80px;
+    background: url('../../assets/images/black-btn-bg-metalicRed.png');
+    color: white;
+    padding: 5px;
+    background-size: cover;
+    object-fit: contain;
+    box-shadow: black 3px 3px 6px 6px;
+    font-weight: 900;
+    animation: flashingBtn infinite 3s ease-in-out;
+  }
+
+  @keyframes flashingBtn {
+    0% {
+      transform: rotatey(0deg);
+    }
+  
+    50% {
+      transform: rotatey(180deg);
+    }
+  
+    1000% {
+      transform: rotatey(360deg);
+    }
+  }
+
+  

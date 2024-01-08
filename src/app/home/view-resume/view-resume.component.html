@@ -1,0 +1,124 @@
+<div class="view_resume_container">
+    <!-- <div class="error_container" *ngIf="!viewResume">
+        <h3 class="text-center">No data Available</h3>
+    </div> -->
+    <div class="main_resume_div" *ngFor="let data of viewResume">
+        <div class="welcomeTest">
+            <h3>View your resume:</h3>
+            <h1>{{logged_in_userName}}</h1>
+            <p>Notice You can only post one resume here but you can either delete or edit them as you like. <br> you can view your resume only, you can't view others. One resume per Account.</p>
+        </div>  
+        <hr>
+        <div class="main_bar" >
+            <div class="side_bar" >
+                <div class="sideBar-content">
+                    <div class="center_button_dev">
+                        <div class="profile_picture"></div> 
+                    </div>
+                    <div class="seperation_line"></div>
+                    <div class="resume_head">
+                        <h2 class="text-center">{{data.firstName}}  {{data.lastName}}</h2>
+                    </div>
+                    <div class="seperation_line"></div>
+                    <div class="contact">
+                        <h3>Contact info</h3>
+                        <hr>
+                        <div class="contact_content">
+                            <div class="firstColume">
+                                <p>Email : {{data.email}}</p>
+                                <p>Mobile : {{data.mobile}}</p>
+                                <p>WhatsApp : {{data.whatsApp}}</p>
+                            </div>
+                        </div>
+                        <hr>          
+                    </div>
+                    <div class="seperation_line"></div>
+                    <div class="Address">
+                        <h3>Address Info</h3>
+                        <hr>
+                        <p>
+                            {{data.lineOne}}, 
+                            {{data.streetName}},<br>
+                            {{data.lineTwo}},<br>
+                            {{data.state}},<br>
+                            {{data.country}},<br>
+                            {{data.zipCode}}<br>
+                        </p>
+                    </div>
+                    <hr>
+                    <div class="seperation_line"></div>
+                    <div class="declaration">
+                        <h3>Declaration</h3>
+                        <hr>
+                        <div class="d_content">
+                            <h5 class="text-center">{{data.declaration}}</h5>
+                        </div>
+                        <hr>
+                    </div>
+                    <div class="seperation_line"></div>
+                </div>
+            </div>
+            <div class="main_content">
+               <div class="main_div_content">
+                    <div class="education_div">
+                        <hr>
+                        <h3>Education Details</h3>
+                        <div class="main_div_seperation"></div>
+                        <div class="college_details">
+                            <p>College-Name : {{data.collegeName}}</p>
+                            <p>Course : {{data.courseName}}</p>
+                            <p>Graducation-Year : {{data.graduationYear}}</p>
+                        </div>
+                        <hr>
+                        <h4>Certification Details</h4>
+                        <hr>
+                        <div class="certification_div">
+                            <p>Certification-Name : {{data.certificationName}}</p>
+                            <p>Course-Module : {{data.courseModules}}</p>
+                            <p>Certified-Year : {{data.certifedYear}}</p>
+                        </div>
+                        <hr>
+                    </div>
+                    <div class="main_div_seperation"></div>
+                    <h3>Experience-Details</h3>
+                    <div class="main_div_seperation"></div>
+                    <div class="compantDatail_div">
+                        <p>Coompany-Name : {{data.companyName}}</p>
+                        <p>Job-Role : {{data.jobRole}}</p>
+                        <p>Contributed-Years : {{data.duration}}</p>
+                    </div>
+                    <hr>
+                    <div class="joining_releiving_details">
+                        <p>Datae-Of-Joining : {{data.dateOfJoining}}</p>
+                        <p>Datae-Of-Relieving : {{data.dateOfLeaving}}</p>
+                        <p>Notice-Period : {{data.noticePeriod}}</p>
+                    </div>
+                    <hr>
+                    <div class="main_div_seperation"></div>
+               </div>
+            </div>
+        </div>
+        <div class="action_button_dev">
+            <button type="button" class="primary_btn" (click)="openEditPage()">Edit Resume</button>
+            <button type="button" class="dark_btn" (click)="openDeletePage()">Delete Resume</button>
+            
+        </div>
+    </div>
+</div>
+<div class="editPageDesign" *ngIf="openEdit">
+    <div class="editFormContainer" >
+        <app-edit-page></app-edit-page>
+    </div>
+</div>
+<div class="deletePageDesign" *ngIf="openDelete">
+    <div class="deleteDialog" >
+        <div class="messageDiv">
+            <h3>Are you sure, you want to delete data, If so press confirm to proceed </h3>
+        </div>
+        <div class="seperation_line"></div>
+        <div class="ButtonDiv">
+            <button type="button" (click)="ondelete()" class="confirm_btn">Confirm</button>
+            <button type="button" (click)="onCancel()" class="cancel_btn">Cancel</button>
+        </div>
+    </div>
+</div>

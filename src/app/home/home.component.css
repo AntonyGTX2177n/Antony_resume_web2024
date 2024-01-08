@@ -1,0 +1,163 @@
+.list_group_items h5 {
+    margin: 0 15px;
+}
+
+.form_container {
+    width: 80%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 17%;
+}
+
+.side_bar_container {
+    position: absolute;
+    right: 0;
+    top: 17%;
+    padding: 25px;
+    background-size: cover;
+    object-fit: contain;
+    width: 20%;
+    min-height: 1500px;
+    animation: dynamicBackground infinite 6s ease-in-out;
+}
+
+@keyframes dynamicBackground {
+    0% {
+        background: url('../assets/images/Bright-spiral.jpg');
+        background-size: cover;
+        object-fit: contain;
+        height: 100%;
+    }
+
+    35% {
+        background: url('../assets/images/spiral-desgin.jpg');
+        background-size: cover;
+        object-fit: contain;
+        color: black;
+        height: 100%;
+    }
+
+    70% {
+        background: url('../assets/images/Thread-design.jpg');
+        background-size: cover;
+        object-fit: contain;
+        color: green;
+        height: 100%;
+    }
+
+    100% {
+        background: url('../assets/images/Bright-spiral.jpg');
+        background-size: cover;
+        object-fit: contain;
+        height: 100%;
+    }
+}
+
+.create_cv_btn,
+.view_cv_btn,
+.subnit_cv_btn {
+    margin: 15px 0;
+    padding: 5px;
+    background-color: blue;
+    color: rgb(237, 252, 226);
+    border-radius: 10px;
+    width: 150px;
+    box-shadow: 3px 3px 6px 6px rgb(237, 252, 226);
+}
+
+.create_cv_btn:hover {
+    background-color: black;
+    border: 5px solid rgb(237, 252, 226);
+}
+
+.view_cv_btn:hover {
+    background-color: black;
+    border: 5px solid rgb(237, 252, 226);
+}
+
+.subnit_cv_btn:hover {
+    background-color: black;
+    border: 5px solid rgb(237, 252, 226);
+}
+
+.profile_pic {
+    background-color: rgba(0, 0, 0, 0.452);
+    border-radius: 100px;
+    width: 100px;
+    height: 100px;
+    padding: 20px;
+    text-align: center;
+}
+
+.profile_pic p {
+    margin-top: 15px;
+    text-transform: uppercase;
+    color: white;
+}
+
+.hide_Input {
+    display: none;
+}
+
+.cretw_cv_div {
+    width: 80%;
+    padding: 30px;
+}
+
+.input_group {
+    display: flex;
+    flex-direction: column;
+}
+
+input {
+    width: 200px;
+}
+
+.profile_picPreview img {
+    background-size: cover;
+    object-fit: cover;
+    border-radius: 100px;
+    width: 100px;
+    height: 100px;
+    box-shadow: black 6px 6px 6px;
+}
+
+.profile_picPreview {
+    border-radius: 100px;
+    width: 100px;
+    height: 100px;
+    padding: 20px;
+}
+
+@media (min-dth: 200px), (max-width: 700px) {
+ 
+
+    .form_container {
+        width: 100%;
+        position: absolute;
+        left: 0;
+        top: 10%;
+    }
+    
+    .side_bar_container {
+        position: absolute;
+        right: 0;
+        top: 2500px;
+        padding: 25px;
+        background-size: cover;
+        object-fit: contain;
+        width: 100%;
+        min-height: 1500px;
+        animation: dynamicBackground infinite 6s ease-in-out;
+    }
+
+    .centered_div {
+        display: block;
+    }
+
+    .profile_pic {
+        margin: 15px 0;
+    }
+    
+}

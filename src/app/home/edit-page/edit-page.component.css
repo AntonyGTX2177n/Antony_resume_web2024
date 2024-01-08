@@ -1,0 +1,57 @@
+.profile_pic {
+    background-color: rgba(0, 0, 0, 0.452);
+    border-radius: 100px;
+    width: 100px;
+    height: 100px;
+    padding: 20px;
+    text-align: center;
+}
+
+.profile_pic p {
+    margin-top: 15px;
+    text-transform: uppercase;
+    color: white;
+}
+
+.hide_Input {
+    display: none;
+}
+
+.cretw_cv_div {
+    padding: 20px;
+}
+
+.input_group {
+    display: flex;
+    flex-direction: column;
+}
+
+input {
+    width: 200px;
+}
+
+.profile_picPreview img {
+    background-size: cover;
+    object-fit: cover;
+    border-radius: 100px;
+    width: 100px;
+    height: 100px;
+    box-shadow: black 6px 6px 6px;
+}
+
+.profile_picPreview {
+    border-radius: 100px;
+    width: 100px;
+    height: 100px;
+    padding: 20px;
+}
+
+@media (min-dth: 200px), (max-width: 700px) {
+    .centered_div {
+        display: block;
+    }
+
+    .profile_pic {
+        margin: 15px 0;
+    }
+}

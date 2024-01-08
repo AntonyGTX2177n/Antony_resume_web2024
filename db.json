@@ -1,0 +1,66 @@
+{
+  "posts": [
+    {
+      "id": "002233",
+      "email": "Antony@test.com",
+      "password": "Antony@123",
+      "userName": "Antony@test.com",
+      "gender": "male"
+    },
+    {
+      "id": "001122",
+      "email": "Guest@Antony.com",
+      "password": "Guest@123",
+      "userName": "Guest",
+      "gender": "male"
+    },
+    {
+      "id": "2211334",
+      "email": "RegistrationTest@test.com",
+      "password": "Antony@123",
+      "userName": "tryingout",
+      "gender": "male"
+    }
+  ],
+  "resume": [
+    {
+      "id": "2211334",
+      "email": "RegistrationTest@test.com",
+      "password": "Antony@123",
+      "userName": "tryingout",
+      "gender": "male"
+    },
+    {
+      "id": "002233",
+      "profileImage": "",
+      "firstName": "Suresh",
+      "lastName": "Antony",
+      "email": "AntonyGTX@hotmail.com",
+      "mobile": "08939610745",
+      "whatsApp": "08939610745",
+      "lineOne": "No 177 heritage jayandra nager",
+      "lineTwo": "Sembakkam, Tambaram east",
+      "streetName": "1st cross street",
+      "state": "Tamil nadu",
+      "country": "India",
+      "zipCode": 600084,
+      "collegeName": "Middlesex university",
+      "courseName": "Computer network security",
+      "graduationYear": "2013-06-04",
+      "certificationName": "Certified Ethical Hacker",
+      "courseModules": "Version-eight",
+      "certifedYear": "2015-07-16",
+      "companyName": "Makolet.pvt.ltd",
+      "jobRole": "Full-stack developer",
+      "duration": 3,
+      "dateOfJoining": "2021-01-03",
+      "dateOfLeaving": "2024-01-01",
+      "noticePeriod": 3,
+      "declaration": "the Information given above is true and honest feed and this is a application that is created as a portfolio for my work and skills and ideas. "
+    }
+  ],
+  "comments": [],
+  "profile": {
+    "name": "typicode"
+  }
+}
