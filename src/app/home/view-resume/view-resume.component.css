@@ -83,7 +83,7 @@
 }
 
 .profile_picture {
-    background: url('../../assets/images/profile.jpeg');
+    /* background: url('../../assets/images/profile.jpeg'); */
     width: 150px;
     height: 150px;
     border-radius: 150px;
@@ -91,6 +91,12 @@
     object-fit: contain;
     box-shadow: brown 7px 7px 12px;
     margin: 10px 0;
+}
+
+.profile_picture img {
+    width: 150px;
+    height: 150px;
+    border-radius: 150px;
 }
 
 .seperation_line {

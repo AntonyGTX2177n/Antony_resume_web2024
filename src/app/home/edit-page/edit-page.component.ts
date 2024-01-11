@@ -107,12 +107,12 @@ export class EditPageComponent implements OnInit {
 
   onImagePicked(event: Event) {
     const file = (event.target as HTMLInputElement).files[0];
-    this.profileCreationForm.patchValue({ profileImage: file });
     this.profileCreationForm.get("profileImage").updateValueAndValidity();
     
     const reader = new FileReader();
     reader.onload = () => {
       this.imagePreview = reader.result as string;
+      this.profileCreationForm.patchValue({ profileImage: reader.result as string });
     };
     reader.readAsDataURL(file);
   }

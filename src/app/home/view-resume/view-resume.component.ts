@@ -17,6 +17,7 @@ export class ViewResumeComponent implements OnInit {
   deleting_id: any;
   openEdit = false;
   openDelete = false;
+  profileImage: any;
 
 
   constructor(
@@ -31,7 +32,7 @@ export class ViewResumeComponent implements OnInit {
         {
           firstName: response.firstName,
           lastName: response.lastName,
-          proFileImage: response.proFileImage,
+          proFileImage: response.profileImage,
           email: response.email,
           mobile: response.mobile,
           whatsApp: response.whatsApp,
@@ -58,8 +59,10 @@ export class ViewResumeComponent implements OnInit {
       ]
       this.viewResume = manualEntry;
       this.deleting_id = response.id;
+      this.profileImage = response.profileImage
       
       console.log(this.viewResume);
+      console.log(response);
       alert('resume is Available to view');
     },
     error => {

@@ -35,8 +35,9 @@ export class HomeComponent implements OnInit {
   }
 
   profileCreationForm = this.formBuilder.group({
-    'profileImage': this.formBuilder.control('', {
-      validators: [Validators.required]
+    profileImage: this.formBuilder.control('', {
+      validators: [Validators.required],
+      asyncValidators: [mimeType]
     }),
     'firstName': this.formBuilder.control('', Validators.required),
     'lastName': this.formBuilder.control('', Validators.required),
@@ -87,17 +88,20 @@ export class HomeComponent implements OnInit {
   }
 
   onImagePicked(event: Event) {
-    const file = (event.target as HTMLInputElement).files[0];
-    this.profileCreationForm.patchValue({ profileImage: file });
+    const file = (event.target as HTMLInputElement).files[0]; 
     this.profileCreationForm.get("profileImage").updateValueAndValidity();
     
     const reader = new FileReader();
     reader.onload = () => {
       this.imagePreview = reader.result as string;
+      //--Patching a value for image as a dataUrl is good for json-server because it supports only string---//
+      this.profileCreationForm.patchValue({ profileImage: reader.result as string });
     };
     reader.readAsDataURL(file);
+    
 
     // const file = (event.target as HTMLInputElement).files[0];
+    //---note patching a value to profileImage may be good for mongoDB--//
     // this.profileCreationForm.patchValue({ profileImage: file });
     // const reader = new FileReader();
 
