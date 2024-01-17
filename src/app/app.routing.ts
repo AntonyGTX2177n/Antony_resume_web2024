@@ -9,6 +9,7 @@ import { SignUpComponent } from './user-access/sign-up/sign-up.component';
 import { IntroPageComponent } from './frame-layout/intro-page/intro-page.component';
 import { SideContentComponent } from './frame-layout/side-content/side-content.component';
 import { HeaderComponent } from './frame-layout/header/header.component';
+import { AuthGuard } from "./auth.guard";
 
 const routes: Routes = [
     { path: '', component:  IntroPageComponent },
@@ -16,7 +17,7 @@ const routes: Routes = [
     { path: 'header', component:  HeaderComponent },
     { path: 'login', component:  LoginComponent },
     { path: 'signUp', component:  SignUpComponent },
-    { path: 'homrPage', component:  HomeComponent },
+    { path: 'homePage', component:  HomeComponent, canActivate: [AuthGuard]},
 ]
 
 

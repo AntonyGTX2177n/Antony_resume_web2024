@@ -116,7 +116,6 @@ input {
 
 .profile_picPreview img {
     background-size: cover;
-    object-fit: cover;
     border-radius: 100px;
     width: 100px;
     height: 100px;
@@ -127,7 +126,6 @@ input {
     border-radius: 100px;
     width: 100px;
     height: 100px;
-    padding: 20px;
 }
 
 @media (min-dth: 200px), (max-width: 700px) {
@@ -143,7 +141,7 @@ input {
     .side_bar_container {
         position: absolute;
         right: 0;
-        top: 2500px;
+        top: 2600px;
         padding: 25px;
         background-size: cover;
         object-fit: contain;
@@ -157,7 +155,7 @@ input {
     }
 
     .profile_pic {
-        margin: 15px 0;
+        margin: 10px 0;
     }
     
 }

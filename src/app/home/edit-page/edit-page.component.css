@@ -1,14 +1,21 @@
 .profile_pic {
-    background-color: rgba(0, 0, 0, 0.452);
     border-radius: 100px;
     width: 100px;
     height: 100px;
-    padding: 20px;
     text-align: center;
 }
 
+.profile_pic img {
+    background-size: cover;
+    border-radius: 100px;
+    width: 100px;
+    height: 100px;
+    box-shadow: black 6px 6px 6px;
+}
+
+
+
 .profile_pic p {
-    margin-top: 15px;
     text-transform: uppercase;
     color: white;
 }
@@ -24,6 +31,8 @@
 .input_group {
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
+    padding: 10px;
 }
 
 input {
@@ -43,7 +52,6 @@ input {
     border-radius: 100px;
     width: 100px;
     height: 100px;
-    padding: 20px;
 }
 
 @media (min-dth: 200px), (max-width: 700px) {
@@ -52,6 +60,6 @@ input {
     }
 
     .profile_pic {
-        margin: 15px 0;
+        margin: 10px 0;
     }
 }

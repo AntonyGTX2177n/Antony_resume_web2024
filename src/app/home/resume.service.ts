@@ -2,21 +2,30 @@ import { Injectable } from '@angular/core';
 import { ResumeData } from './resume-data-model';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
+import { environment } from 'src/environments/environment';
+
+const BACKEND_URL = environment.apiUrl + "/resume";
 
 @Injectable({
   providedIn: 'root'
 })
 export class ResumeService {
 
-  apiUrl = "http://localhost:3000/resume";
+  // apiUrl = "http://localhost:3000/resume";
+  private isAuthenticated = false;
 
   constructor(
     private http: HttpClient,
   ) { }
 
+  getIsAuth() {
+		return this.isAuthenticated;
+	}
+
   postResume(resumeInput: any) 
   {
-    return this.http.post<any>(this.apiUrl, resumeInput).pipe(
+    this.isAuthenticated = true;
+    return this.http.post<any>(BACKEND_URL, resumeInput).pipe(
       map((response: any) => {
         return response
       }
@@ -85,13 +94,15 @@ export class ResumeService {
   // }
 
   getAll() {
-    return this.http.get<any>(this.apiUrl).pipe(map((response: any) => {
+    this.isAuthenticated = true;
+    return this.http.get<any>(BACKEND_URL).pipe(map((response: any) => {
       return response
     }));
   }
 
   getById(id: string) {
-    return this.http.get<any>(this.apiUrl+'/'+id).pipe(
+    this.isAuthenticated = true;
+    return this.http.get<any>(BACKEND_URL+'/'+id).pipe(
       map((response: any) => {
         return response
       })
@@ -99,7 +110,8 @@ export class ResumeService {
   }
 
   updateResume(id: string, resumeInput: any) {
-    return this.http.put<any>(this.apiUrl+'/'+id, resumeInput).pipe(
+    this.isAuthenticated = true;
+    return this.http.put<any>(BACKEND_URL+'/'+id, resumeInput).pipe(
       map((response: any) => {
         return response
       })
@@ -107,6 +119,7 @@ export class ResumeService {
   }
 
   deleteResume(id: any) {
-   return this.http.delete(this.apiUrl+'/'+id)
+    this.isAuthenticated = true;
+   return this.http.delete(BACKEND_URL+'/'+id)
   }
 }

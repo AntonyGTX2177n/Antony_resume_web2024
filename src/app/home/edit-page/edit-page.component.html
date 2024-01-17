@@ -6,7 +6,7 @@
         </header>
         <hr>
         <div class="centered_div">
-            <div class="input_group">
+            <div class="input_group_profilePic">
                 <input 
                     type="file" 
                     class="hide_Input" 
@@ -14,7 +14,7 @@
                     (change)="onImagePicked($event)"
                 />
                 <div class="profile_pic" (click)="profilePicture.click()" *ngIf="!imagePreview">
-                    <p>profile pic</p>
+                    <img [src]="oldImage" alt="">
                 </div>
                 <div 
                     class="profile_picPreview"

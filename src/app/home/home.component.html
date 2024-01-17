@@ -8,13 +8,7 @@
             </header>
             <hr>
             <div class="centered_div">
-                <div class="input_group">
-                    <input 
-                        type="file" 
-                        class="hide_Input" 
-                        #profilePicture
-                        (change)="onImagePicked($event)"
-                    />
+                <div class="input_group_profilePic">         
                     <div class="profile_pic" (click)="profilePicture.click()" *ngIf="!imagePreview">
                         <p>profile pic</p>
                     </div>
@@ -25,6 +19,12 @@
                         >
                         <img [src]="imagePreview" [alt]="profileCreationForm.value.firstName">
                     </div>
+                    <input 
+                        type="file" 
+                        class="hide_Input" 
+                        #profilePicture
+                        (change)="onImagePicked($event)"
+                    />
                 </div>
                 <div class="input_group">
                     <label for="firstName">First-name*</label>

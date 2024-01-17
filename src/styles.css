@@ -106,3 +106,10 @@
   grid-template-columns: 200px 200px 200px;
   
 }
+
+.input_group_profilePic {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 25px 5px;
+}

@@ -11,15 +11,22 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
   gotMail: any;
+  gotPassword: any;
   bulhData: any;
   registeredMail: LoginData[];
   logged_in_user: any;
+
+
+ 
 
   constructor(
     private fb: FormBuilder,
     private service: AuthorizationService,
     private router: Router
   ) { }
+
+  
+
 
   ngOnInit(): void {
     this.service.GetAll().subscribe(res => {
@@ -44,20 +51,23 @@ export class LoginComponent implements OnInit {
     console.log(this.loginForm.value);
     this.bulhData.map(gotMail => {    
       if (gotMail.email === this.loginForm.value.email) {
-        this.gotMail = gotMail.email
+        this.gotMail = gotMail.email;
+        this.gotPassword = gotMail.password;
         localStorage.setItem("userName", gotMail.email);
         localStorage.setItem("userId", gotMail.id);
         localStorage.setItem("password", gotMail.password);
         return console.log(gotMail.email);
       } 
     })
-    if(this.gotMail === this.loginForm.value.email){
+    if(this.gotMail === this.loginForm.value.email && this.gotPassword === this.loginForm.value.password){
       alert('welcome user') 
-      this.router.navigate(['homrPage'])
+      this.router.navigate(['homePage']);
     } else {
-      alert('user is not registered')
+      alert('user is not registered. Either email or password is wrong')
     }
   }
+
+
 
 
 }

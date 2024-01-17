@@ -17,6 +17,7 @@ export class EditPageComponent implements OnInit {
   logged_in_id: any;
   imagePreview: any;
   editResume: any;
+  oldImage: any;
 
    //Editing model
    editingResume: ResumeData;
@@ -61,9 +62,9 @@ export class EditPageComponent implements OnInit {
   ngOnInit(): void {
     this.loadData()
     this.resumeService.getById(this.logged_in_id).subscribe(response => {
-     
+      this.oldImage =  response.profileImage
       this.profileCreationForm.patchValue({
-        proFileImage: response.proFileImage,
+        profileImage: response.profileImage,
         firstName: response.firstName,
         lastName: response.lastName,
         email: response.email,
@@ -156,7 +157,6 @@ export class EditPageComponent implements OnInit {
     })
     console.log(this.profileCreationForm.value)
     window.location.reload()
-    this.router.navigate(['home']);
   }
 
 }
