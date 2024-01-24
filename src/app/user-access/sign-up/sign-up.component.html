@@ -9,6 +9,17 @@
             <input type="text" class="form_control" formControlName="id">
           </div>
           <div class="form_group">
+            <div class="profile_pic" (click)="profilePicture.click()" *ngIf="!imagePreview">
+              <p>profile pic</p>
+            </div>
+            <div class="profile_picPreview"
+              *ngIf="imagePreview !== '' && imagePreview && SignupForm.get('profileImage').valid"
+              (click)="profilePicture.click()">
+              <img [src]="imagePreview" [alt]="SignupForm.value.firstName">
+            </div>
+            <input type="file" class="hide_Input" #profilePicture (change)="onImagePicked($event)" />
+          </div>
+          <div class="form_group">
             <label for="email">Enter your mail Addess</label>
             <input type="email" class="form_control" formControlName="email">
           </div>
@@ -29,13 +40,13 @@
               </div>
               <div class="female">
                 <input type="radio" formControlName="gender" id="female" name="gender" value="female">
-                <label for="female">Female</label> 
+                <label for="female">Female</label>
               </div>
             </div>
           </div>
           <div class="center_button_dev_smallScreen">
             <button type="submit" class="primary_btn">Submit-form</button>
-         </div>
+          </div>
         </div>
       </div>
       <p class="hintText">Hint: click the button on the reight to submit the form</p>

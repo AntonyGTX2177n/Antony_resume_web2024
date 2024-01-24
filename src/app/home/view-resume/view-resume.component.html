@@ -1,7 +1,12 @@
 <div class="view_resume_container">
-    <!-- <div class="error_container" *ngIf="!viewResume">
+    <div class="error_container" *ngIf="!viewResume">
         <h3 class="text-center">No data Available</h3>
-    </div> -->
+        <p>Create an Resume by pressing the button on the  on big screen if your using mobile the button is located bellow</p>
+        <h1>{{logged_in_userName}}</h1>
+        <div class="profile_picPreview">
+            <img [src]="logged_in_PIcture" alt="">
+        </div>
+    </div>
     <div class="main_resume_div" *ngFor="let data of viewResume">
         <div class="welcomeTest">
             <h3>View your resume:</h3>

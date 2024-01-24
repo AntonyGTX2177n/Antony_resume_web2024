@@ -126,6 +126,39 @@ form {
   display: flex;
   justify-content: space-around;
 }
+
+.profile_pic {
+  background-color: rgba(0, 0, 0, 0.452);
+  border-radius: 100px;
+  width: 100px;
+  height: 100px;
+  padding: 20px;
+  text-align: center;
+}
+
+.profile_pic p {
+  margin-top: 15px;
+  text-transform: uppercase;
+  color: white;
+}
+
+.hide_Input {
+  display: none;
+}
+
+.profile_picPreview img {
+  background-size: cover;
+  border-radius: 100px;
+  width: 100px;
+  height: 100px;
+  box-shadow: black 6px 6px 6px;
+}
+
+.profile_picPreview {
+  border-radius: 100px;
+  width: 100px;
+  height: 100px;
+}
   
 @media(min-width:200px){
   .side_bar_container {

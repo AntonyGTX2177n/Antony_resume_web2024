@@ -10,9 +10,6 @@ const BACKEND_URL = environment.apiUrl + "/posts";
 })
 export class AuthorizationService {
 
-	
-
-
 	// apiUrl = "http://localhost:3000/posts";
 
 	private isAuthenticated = false;

@@ -14,6 +14,7 @@ export class ViewResumeComponent implements OnInit {
   viewResume: any;
   logged_in_id: any;
   logged_in_userName: any;
+  logged_in_PIcture: any;
   deleting_id: any;
   openEdit = false;
   openDelete = false;
@@ -73,9 +74,11 @@ export class ViewResumeComponent implements OnInit {
   loadData(){
     let dataOne = localStorage.getItem('userName');
     let dataTwo = localStorage.getItem('userId');
+    let dataOroFilePic = localStorage.getItem('profileImage');
 
     this.logged_in_userName = dataOne
     this.logged_in_id = dataTwo
+    this.logged_in_PIcture = dataOroFilePic
   }
 
   ondelete(){

@@ -11,6 +11,7 @@ export class HeaderComponent implements OnInit {
   logged_in_userName: any;
   logged_in_password: any;
   logged_in_id: any;
+  logged_in_PIcture: any;
 
   constructor(
     private service: AuthorizationService
@@ -28,10 +29,12 @@ export class HeaderComponent implements OnInit {
     let dataOne = localStorage.getItem('userName');
     let dataTwo = localStorage.getItem('userId');
     let dataThree = localStorage.getItem('password');
+    let dataOroFilePic = localStorage.getItem('profileImage');
 
     this.logged_in_userName = dataOne
     this.logged_in_password = dataThree
     this.logged_in_id = dataTwo
+    this.logged_in_PIcture = dataOroFilePic
   }
 
 }

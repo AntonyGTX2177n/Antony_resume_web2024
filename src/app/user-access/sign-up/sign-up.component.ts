@@ -16,6 +16,7 @@ import { Router } from '@angular/router';
 export class SignUpComponent implements OnInit {
 
   gwnderSekect = true;
+  imagePreview: any;
 
   constructor(
     private fb: FormBuilder,
@@ -28,8 +29,12 @@ export class SignUpComponent implements OnInit {
   }
 
 
+
+
+
   SignupForm = this.fb.group({
     id: this.fb.control('', Validators.compose([Validators.required, Validators.minLength(5)])),
+    profileImage: this.fb.control('', Validators.required),
     email: this.fb.control('', Validators.compose([Validators.required, Validators.email])),
     password: this.fb.control('', Validators.compose([
       Validators.required, 
@@ -38,6 +43,19 @@ export class SignUpComponent implements OnInit {
     userName: this.fb.control('', Validators.required),
     gender: this.fb.control('male')
   })
+
+  onImagePicked(event: Event) {
+    const file = (event.target as HTMLInputElement).files[0]; 
+    this.SignupForm.get("profileImage").updateValueAndValidity();
+    
+    const reader = new FileReader();
+    reader.onload = () => {
+      this.imagePreview = reader.result as string;
+      //--Patching a value for image as a dataUrl is good for json-server because it supports only string---//
+      this.SignupForm.patchValue({ profileImage: reader.result as string });
+    };
+    reader.readAsDataURL(file);
+  }
 
 
 

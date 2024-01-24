@@ -1,46 +1,88 @@
 nav {
-    margin: 0;
-    padding: 15px;
-    width: 100%;
-    left: 0;
-    top: 0;
-    background: url('../../assets/images/Bright-spiral.jpg');
-    background-size: cover;
-    object-fit: cover;
-    box-shadow: 3px 6px 12px rgba(0, 0, 255, 0.5);
+  margin: 0;
+  padding: 15px;
+  width: 100%;
+  left: 0;
+  top: 0;
+  background: url('../../assets/images/Bright-spiral.jpg');
+  background-size: cover;
+  object-fit: cover;
+  box-shadow: 3px 6px 12px rgba(0, 0, 255, 0.5);
 }
 
 .centered_div {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 
 .userAccess_btn {
-    width: 80px;
-    height: 80px;
-    border-radius: 80px;
+  width: 80px;
+  height: 80px;
+  border-radius: 80px;
+  background: url('../../assets/images/black-btn-bg-metalicRed.png');
+  color: white;
+  padding: 5px;
+  background-size: cover;
+  object-fit: contain;
+  box-shadow: black 3px 3px 6px 6px;
+  font-weight: 900;
+  animation: flashingBtn infinite 3s ease-in-out;
+}
+
+@keyframes flashingBtn {
+  0% {
+    transform: rotatey(0deg);
+  }
+
+  50% {
+    transform: rotatey(180deg);
+  }
+
+  1000% {
+    transform: rotatey(360deg);
+  }
+}
+
+.user_content {
+  display: flex;
+  justify-content: space-around;
+  width: 30%;
+  box-shadow: 5px 5px 5px white;
+  border-bottom-right-radius: 40px;
+}
+
+.profile_picPreview {
+  padding: 0 10px;
+}
+
+.profile_picPreview img {
+  border-radius: 70px;
+  width: 70px;
+  height: 70px;
+}
+
+@media (min-dth: 200px), (max-width: 700px) {
+  .user_content {
+    display: flex;
+    justify-content: space-around;
+    width: 70%;
+    padding: 5px 0;
+    box-shadow: 5px 5px 14px black;
+    border-bottom-right-radius: 40px;
+  }
+
+  .userAccess_btn {
+    width: 55px;
+    height: 55px;
+    border-radius: 55px;
     background: url('../../assets/images/black-btn-bg-metalicRed.png');
     color: white;
-    padding: 5px;
+    padding: 2px;
     background-size: cover;
     object-fit: contain;
     box-shadow: black 3px 3px 6px 6px;
     font-weight: 900;
+    font-size: 8px;
     animation: flashingBtn infinite 3s ease-in-out;
   }
-
-  @keyframes flashingBtn {
-    0% {
-      transform: rotatey(0deg);
-    }
-  
-    50% {
-      transform: rotatey(180deg);
-    }
-  
-    1000% {
-      transform: rotatey(360deg);
-    }
-  }
-
-  
+}
